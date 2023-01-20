@@ -11,7 +11,7 @@ const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true, use
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://localhost/todolist", connectionOptions)
+mongoose.connect('mongodb+srv://todo:1234@todo.alqk27v.mongodb.net/?retryWrites=true&w=majority', connectionOptions)
     .then(() => console.log("Connected successfully"))
     .catch((err) => console.error(err));
 
