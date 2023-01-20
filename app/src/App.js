@@ -7,6 +7,12 @@ import List from "./components/List";
 
 const appTitle = "To-Do App";
 
+/* const list = [
+    { title: "test #1", completed: false},
+    { title: "test #2"},
+    { title: "test #3"}
+] */
+
 const App = () => {
     const [todoList, setTodoList] = useState([]);
 
