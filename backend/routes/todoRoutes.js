@@ -19,7 +19,7 @@ router.put("/:id", (req, res) => {
     Todo.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, (err, result) => {
         if(err) throw new Error(err);
         res.json(result);
-        /* console.log("hola") */
+        console.log("hola")
     });
 });
 
