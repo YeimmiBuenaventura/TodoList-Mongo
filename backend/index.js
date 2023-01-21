@@ -1,26 +1,38 @@
-const express = require("express");
-const mongoose = require("mongoose");
+/*
+Mongoose is a library that helps to facilitate and structure the work with MongoDB, 
+it provides a high-level interface to create, query, update and delete documents in 
+the database, as well as to create and manage schemas and relationships between documents.
+*/
+const mongoose = require("./models/connection"); // We import the path of the connection file to the mongoDB.
+
+/*
+Express is one of the most popular web frameworks for Node.js, and is widely used in building web applications and web services.
+With Express, you can create routes and request handlers to handle HTTP requests.
+*/
+const express = require("express"); // The express module is imported with the require keyword for its use.
+
+/*
+CORS (Cross-Origin Resource Sharing) is a security mechanism used to restrict access to resources of a different origin in a web application.
+*/
 const cors = require("cors");
 
-const PORT = 3030;
+const PORT = 3030; // The port where the database connection will run is declared.
 const app = express();
 
-const todoRoutes = require("./routes/todoRoutes");
-const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false };
+const todoRoutes = require("./routes/todoRoutes"); // The methods that will be used in the app are imported.
 
-app.use(express.json());
-app.use(cors());
+app.use(express.json());// Use the librery and converts it to json.
+app.use(cors());// Use the security mechanism for the app.
+app.use("/todos", todoRoutes); // In this route, the added lists will be displayed from the front, it is possible to observe in postamn or in the browser after localhost:3030/todos
 
-mongoose.connect('mongodb+srv://todo:1234@todo.alqk27v.mongodb.net/?retryWrites=true&w=majority', connectionOptions)
-    .then(() => console.log("Connected successfully"))
-    .catch((err) => console.error(err));
+mongoose; // I call database connection
 
+// This method helps us to check if it is running correctly on the declared port and this can be tested in postman
 app.get('/', (req, res) => {
-    res.send('Online')
+    res.send('Online') // 
 })
 
-app.use("/todos", todoRoutes);
-
+// This method listens for the request and prints a message to warn which port the backend will be running on.
 app.listen(PORT, () => {
     console.log("The server is listening on port " + PORT);
 });

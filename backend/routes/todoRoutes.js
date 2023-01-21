@@ -2,17 +2,20 @@ const router = require("express").Router();
 const Todo = require("../models/Todo");
 
 router.get("/", (req, res) => {
-    Todo.find((err, result) => {
+     Todo.find((err, result) => {
         if(err) throw new Error(err);
-        res.json(result);
-    });
+         res.json(result);
+     });
 });
 
-router.post("/", (req, res) => {
-    Todo.create(req.body, (err, result) => {
-        if(err) throw new Error(err);
+router.post("/", async (req, res) => {
+     try {
+        const result = await Todo.create(req.body)
         res.json(result);
-    });
+    } catch (error) {
+        throw new Error(err)
+    } 
+
 });
 
 router.put("/:id", (req, res) => {
