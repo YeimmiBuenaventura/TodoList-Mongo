@@ -1,6 +1,12 @@
+//impor UseState in react for use in funcionality later
 import React, { useState } from "react";
+//import stylesheet for stylisated the input and button later
+import "./styles/form.css";
 
+//create controller in the const Form and we pass addTodo
 const Form = ({ addTodo }) => {
+    //in to cont Form importated proops inputValue and setInputValue 
+    //Use useState to asignated the state clear
     const [inputValue, setInputValue] = useState("");
 
     const handleInputChange = (e) => {
