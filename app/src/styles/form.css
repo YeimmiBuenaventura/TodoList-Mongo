@@ -30,6 +30,18 @@
     border-radius: 30px;
 }
 
+@media (max-width: 744px){
+    #input_add{
+        width: 300px;
+    }
+}
+
+@media (max-width: 428px){
+    #input_add{
+        width: 150px;
+    }
+}
+
 #input_add{
     font-family: 'KoHo', sans-serif;
     font-size: 18px;

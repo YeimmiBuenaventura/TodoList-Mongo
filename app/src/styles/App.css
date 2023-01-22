@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.background_image{
+    background-color: #8ECD1E;
+    height: 982px;
+    background-position : bottom right;
+    background-image: url("../img/background/background_destopk.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.container_app{
+    padding-top: 1px;
+    width: 700px;
+    align-items: center;
+    margin: 0% auto;
+    border-radius: 30px;
+        -webkit-backdrop-filter:blur(7px);
+    backdrop-filter:blur(7px);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.tittle{
+    font-family: 'Leckerli One', cursive;
+    font-size: 50px;
+    font-weight: 400;
+    color: white;
+}
+
+@media (max-width: 744px) {
+    .background_image{
+        background-image: url("../img/background/background_tablet.jpg");
+    }
+
+    .container_app{
+        width: 500px;
+    }
+}
+
+@media (max-width: 428px) {
+    .background_image{
+        background-image: url("../img/background/background_movil.jpg");
+    }
+
+    .container_app{
+        width: 300px;
+    }
+}
