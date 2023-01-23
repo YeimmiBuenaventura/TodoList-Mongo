@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import todos from "./apis";
-import "../src/styles/App.css"
+// import "../src/styles/App.css"
 
 import Form from "./components/Form";
 import Section from "./components/Section";
@@ -50,29 +50,29 @@ const App = () => {
 
     return (
         <div className="background_image">
-        <div className="container_app">
-        <div className="ui container center aligned">
-            <Section>
-                <h1 className="tittle">{appTitle}</h1>
-            </Section>
+            <div className="container_app">
+                <div className="ui container center aligned">
+                    <Section>
+                        <h1 className="tittle">{appTitle}</h1>
+                    </Section>
 
-            <Section>
-                <Form addTodo={addTodo}/>
-            </Section>
+                    <Section>
+                        <Form addTodo={addTodo} />
+                    </Section>
 
-            <Section>
-                <List
-                    editTodoListProp={editTodo}
-                    removeTodoListProp={removeTodo}
-                    list={todoList}
-                />
-                <div>
-                    <input type="text" onChange={searchTitle} />
-                    <button type="button" onClick={clickSearch}>Buscar</button>
+                    <Section>
+                        <List
+                            editTodoListProp={editTodo}
+                            removeTodoListProp={removeTodo}
+                            list={todoList}
+                        />
+                        <div>
+                            <input type="text" onChange={searchTitle} />
+                            <button type="button" onClick={clickSearch}>Buscar</button>
+                        </div>
+                    </Section>
                 </div>
-            </Section>
-        </div>
-        </div>
+            </div>
         </div>
     );
 };
