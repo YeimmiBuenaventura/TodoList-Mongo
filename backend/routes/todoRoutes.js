@@ -14,7 +14,7 @@ router.post("/", (req, res) => {
         if(err) throw new Error(err);
         res.json(result);
     });
-    
+});
 //Find and update de specific object in the JSON when listen PUT request
 router.put("/:id", (req, res) => {
     Todo.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, (err, result) => {
