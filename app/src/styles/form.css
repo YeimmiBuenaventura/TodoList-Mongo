@@ -18,9 +18,18 @@
     text-shadow: 2px 3px 5px #000000;
     text-shadow: 2px 3px 5px #000000;
 }
+.row{
+    padding: 15px 20px !important;
+    border-radius: 30px;
+   
+
+}
+
 
 .ui_button_circular_icon_green:hover{
     background-color: #537A0E;
+    cursor: pointer;
+   
 }
 
 #input_add{

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {//Se guardan esos objetos como parámetros.
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);//El estado actual va a ser el objeto title
@@ -37,8 +38,16 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {//
 
     
 
+    
+
     return (
-        <div className="row">
+        <div className="row"
+        style={{
+        display:"flex",
+       justifyContent:"space-between",
+       backgroundColor:"#8ECD1E",
+       margin:"20px auto",
+        }}>
             {
             isEditing ?
                 <div className="column seven wide">
@@ -52,23 +61,25 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {//
                     </div>
                 </div> :
                 <>
-                    <div className="column five wide" onDoubleClick={handleDivDoubleClick}> {/* Funcion del doble click */}
-                        <h2 className={"ui header" + (completedState ? " green" : "")}>{value}</h2>{/*el estado está completo se mostrará verde, si no un string vacio*/}
-                    </div>
 
                     <div className="column one wide">
-                        <button
-                            className={"ui button circular icon" + (completedState ? " blue" : " green")}
+                        <button 
+                            className={"ui button circular icon" + (completedState ? " while"   : " green")}
                             onClick={handleButtonClick}//Cuando se de click se mostrará en un string vacío
                         >
                             <i className="white check icon"></i>
                         </button>
                     </div>
 
+                    <div className="column five wide" onDoubleClick={handleDivDoubleClick} > {/* Funcion del doble click */}
+                        <h2 className={"ui header" + (completedState ? " red" : "")}>{value}</h2>{/*el estado está completo se mostrará verde, si no un string vacio*/}
+                    </div>
+
                     <div className="column one wide">
                         <button
+                      
                             onClick={removeTodoItemProp}//funcion que falta
-                            className="ui button circular icon red"
+                            className="ui button circular icon red" 
                         >
                             <i className="white remove icon"></i>
                         </button>
