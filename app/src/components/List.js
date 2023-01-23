@@ -1,4 +1,5 @@
 import React from "react";
+import "..//components/styles/list.scss"
 import Todo from "./Todo";
 
 const List = ({ list, removeTodoListProp, editTodoListProp }) => {
@@ -18,18 +19,7 @@ const List = ({ list, removeTodoListProp, editTodoListProp }) => {
     );
     return (
         <div className="ui grid center aligned">
-             {/*mientras no se le agrege ninguna tarea se mostrata no tasks*/}
-      { /* as long as no task is added, no task will be displayed */ }
-      {list.length ? list : "No tasks"}
-
-      {/*delete each performed task one by one*/}
-      {list.length ? (
-        <p>
-          <button className="ui button circular icon green" onClick={removeTodoListProp}>
-            Delete all done
-          </button>
-        </p>
-      ) : null}
+ 
             {renderedList}
    
         </div>
