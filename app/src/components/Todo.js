@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {//Se guardan esos objetos como parámetros.
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);//El estado actual va a ser el objeto title
