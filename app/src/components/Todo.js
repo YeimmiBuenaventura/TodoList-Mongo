@@ -35,6 +35,8 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {//
         });
     };
 
+    
+
     return (
         <div className="row">
             {
