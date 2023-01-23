@@ -24,3 +24,5 @@ app.use("/todos", todoRoutes);
 app.listen(PORT, () => {
     console.log("The server is listening on port " + PORT);
 });
+
+console.log("hola");

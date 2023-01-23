@@ -7,8 +7,15 @@ import List from "./components/List";
 
 const appTitle = "To-Do App";
 
+/* const list = [
+    { title: "test #1", completed: false},
+    { title: "test #2"},
+    { title: "test #3"}
+] */
+
 const App = () => {
     const [todoList, setTodoList] = useState([]);
+    const [titleSearch, setTitleSearch] = useState('');
 
     useEffect(() => {
         async function fetchData() {
@@ -33,6 +40,13 @@ const App = () => {
         await todos.put(`/todos/${id}`, item);
     };
 
+    const searchTitle = e => setTitleSearch(e.target.value);
+
+    const clickSearch = async () => {
+        const { data } = await todos.get(`/todos?title=${titleSearch}`);
+        setTodoList(data);
+    }
+
     return (
         <div className="ui container center aligned">
             <Section>
@@ -49,6 +63,10 @@ const App = () => {
                     removeTodoListProp={removeTodo}
                     list={todoList}
                 />
+                <div>
+                    <input type="text" onChange={searchTitle} />
+                    <button type="button" onClick={clickSearch}>Buscar</button>
+                </div>
             </Section>
         </div>
     );
