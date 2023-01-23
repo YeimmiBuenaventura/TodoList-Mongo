@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import todos from "./apis";
+import "../src/styles/App.css"
 
 import Form from "./components/Form";
 import Section from "./components/Section";
 import List from "./components/List";
 
-const appTitle = "To-Do App";
+const appTitle = "Lista de tareas pendientes";
 
 /* const list = [
     { title: "test #1", completed: false},
@@ -48,13 +49,15 @@ const App = () => {
     }
 
     return (
+        <div className="background_image">
+        <div className="container_app">
         <div className="ui container center aligned">
             <Section>
-                <h1>{appTitle}</h1>
+                <h1 className="tittle">{appTitle}</h1>
             </Section>
 
             <Section>
-                <Form addTodo={addTodo} />
+                <Form addTodo={addTodo}/>
             </Section>
 
             <Section>
@@ -68,6 +71,8 @@ const App = () => {
                     <button type="button" onClick={clickSearch}>Buscar</button>
                 </div>
             </Section>
+        </div>
+        </div>
         </div>
     );
 };
