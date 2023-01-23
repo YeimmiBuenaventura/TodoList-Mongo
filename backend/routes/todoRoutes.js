@@ -1,11 +1,6 @@
 const router = require("express").Router();
 const Todo = require("../models/Todo");
 
-<<<<<<< HEAD
-router.get("/", (req, res) => {
-    Todo.find((err, result) => {
-        if (err) throw new Error(err);
-=======
 router.get("/", async (req, res) => {
     try {
         if (req.query?.title) {//Coloque el metodo find para que buscara el objeto titulo
@@ -39,7 +34,6 @@ router.post("/", async (req, res) => {
 router.put("/:id", (req, res) => {
     Todo.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, (err, result) => {
         if(err) throw new Error(err);
->>>>>>> 73473051163093ba103c85b1e601d65a1e97aeb5
         res.json(result);
     });
 });

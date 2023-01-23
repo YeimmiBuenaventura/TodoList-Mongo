@@ -16,7 +16,7 @@ CORS (Cross-Origin Resource Sharing) is a security mechanism used to restrict ac
 */
 const cors = require("cors");
 
-// const PORT = 5000; // The port where the database connection will run is declared.
+const PORT = 3030; // The port where the database connection will run is declared.
 const app = express();
 
 const todoRoutes = require("./routes/todoRoutes"); // The methods that will be used in the app are imported.
@@ -33,6 +33,8 @@ app.get('/', (req, res) => {
 })
 
 // This method listens for the request and prints a message to warn which port the backend will be running on.
-app.listen(5000, function (){
-    console.log("The server is listening on port ", 5000);// this.address().port);
+app.listen(PORT, () => {
+    console.log("The server is listening on port " + PORT);
 });
+
+console.log("hola");
