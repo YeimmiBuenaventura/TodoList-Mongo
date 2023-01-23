@@ -26,7 +26,7 @@ app.use(cors());// Use the security mechanism for the app.
 app.use("/todos", todoRoutes); // In this route, the added lists will be displayed from the front, it is possible to observe in postamn or in the browser after localhost:3030/todos
 
 mongoose; // I call database connection
-mongoose.connect('mongodb+srv://todo:1234@todo.alqk27v.mongodb.net/test', connectionOptions)
+mongoose.connect('mongodb+srv://todo:1234@todo.alqk27v.mongodb.net/test')
     .then(() => console.log("Connected successfully"))
     .catch((err) => console.error(err));
 
