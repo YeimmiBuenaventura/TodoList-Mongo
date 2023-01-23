@@ -1,9 +1,45 @@
 const router = require("express").Router();
 const Todo = require("../models/Todo");
 
+<<<<<<< HEAD
 router.get("/", (req, res) => {
     Todo.find((err, result) => {
         if (err) throw new Error(err);
+=======
+router.get("/", async (req, res) => {
+    try {
+        if (req.query?.title) {//Coloque el metodo find para que buscara el objeto titulo
+            const seachTodo = await Todo.find({ 
+                title: {
+                    '$regex': req.query?.title
+                }
+            });
+            res.json(seachTodo);
+        }
+        else{
+            const result =  await Todo.find();
+            res.json(result);
+        }
+    } catch (error) {
+        res.json({ error: true, message: 'ocurrio un error'})
+        throw new Error(error);
+    }
+});
+
+router.post("/", async (req, res) => {
+    try {
+        const result = await Todo.create(req.body)
+        res.json(result);
+    } catch (error) {
+        res.json({ error: true, message: 'ocurrio un error'})
+        throw new Error(err)
+    }
+});
+
+router.put("/:id", (req, res) => {
+    Todo.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, (err, result) => {
+        if(err) throw new Error(err);
+>>>>>>> 73473051163093ba103c85b1e601d65a1e97aeb5
         res.json(result);
     });
 });
