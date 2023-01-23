@@ -14,7 +14,7 @@ const List = ({ list, removeTodoListProp, editTodoListProp }) => {
     )
   );
   return (
-    <div className="ui grid center aligned">
+    <div className="ui grid center aligned" style={{backgroundColor: 'rgba(255,255,255,.3)', borderRadius: 20, padding: 20}}>
       {renderedList}
     </div>
   );

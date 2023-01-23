@@ -1,50 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=KoHo&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=KoHo&display=swap");
 
-.ui_grid_center_aligned{
-    display: flex;
+.column_five_wide > #input_add {
+  background-color: #ffffff;
+  width: 350px;
+  height: 50px;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 30px;
+  border: 2px solid #fff;
+  font-family: "KoHo", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
 }
 
-.ui_button_circular_icon_green{
-    background-color: #8ECD1E;
-    border-radius: 20px;
-    width: 4.5rem;
-    height: 3rem;
-    border: none;
-    outline: 4px solid #FFFFFF;
-    font-family: 'Just Another Hand', cursive;
-    font-size: 45px;
-    color: white;
-    text-shadow: 2px 3px 5px #000000;
-    text-shadow: 2px 3px 5px #000000;
+.column_five_wide > #input_add:focus {
+  color: #d9d9d9;
+  background-color: #212121;
+  box-shadow: 2px 2px 15px #000;
+  transition: 0.5s;
+  transition-property: box-shadow;
 }
 
-.ui_button_circular_icon_green:hover{
-    background-color: #537A0E;
+.ui_button_add {
+  width: 135px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background-color: #8ecd1e;
+  outline: 4px solid #ffffff;
+  font-family: "KoHo", sans-serif;
+  font-size: 18px;
 }
 
-#input_add{
-    background-color: #D9D9D9;
-    width: 400px;
-    height: 50px;
-    border-radius: 30px;
+.ui_button_add,
+.ui_button_add span {
+  transition: 200ms;
 }
 
-@media (max-width: 744px){
-    #input_add{
-        width: 300px;
-    }
+.ui_button_add .text {
+  transform: translateX(20px);
+  color: #fff;
+  font-weight: bold;
 }
 
-@media (max-width: 428px){
-    #input_add{
-        width: 150px;
-    }
+.ui_button_add .icon {
+  position: absolute;
+  border-left: 1px solid #117024;
+  transform: translateX(95px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #117024;
 }
 
-#input_add{
-    font-family: 'KoHo', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: #545454;
+.ui_button_add:hover, .ui_button_add:active {
+  background: #117024;
+}
+
+.ui_button_add:hover .text, .ui_button_add:active .text {
+  color: transparent;
+}
+
+.ui_button_add:hover .icon, .ui_button_add:active  .icon{
+  width: 135px;
+  border-left: none;
+  transform: translateX(0);
+  color: #212121;
+  font-size: 25px;
+}
+
+.ui_button_add:focus {
+  outline: none;
+}
+
+.ui_button_add:active .icon {
+  transform: scale(0.8);
+}
+
+.containerAdd {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+/*  */
+
+@media (max-width: 744px) {
+  .column_five_wide > #input_add{
+    width: 280px;
+  }
+}
+
+@media (max-width: 428px) {
+  .containerAdd{
+    flex-direction: column;
+  }
+  .column_five_wide > #input_add{
+    width: 220px;
+    margin-bottom: 15px;
+  }
 }

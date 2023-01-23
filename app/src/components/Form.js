@@ -25,8 +25,8 @@ const Form = ({ addTodo }) => {
     return (
         //return input and buttom for data to be added to the todo list
         <form className="ui form" onSubmit={handleFormSubmit}>
-            <div className="ui grid center aligned">
-                <div className="row">
+            <div className="ui grid center aligned container">
+                <div className="containerAdd">
                     <div className="column_five_wide">
                         <input
                             value={inputValue}
@@ -37,7 +37,9 @@ const Form = ({ addTodo }) => {
                     </div>
 
                     <div className="column one wide">
-                        <button type="submit" className="ui_button_circular_icon_green">+</button>
+                        <button type="submit" className="ui_button_add">
+                            <span class="text">Agregar</span><span class="icon">+</span>
+                        </button>
                     </div>
                 </div>
             </div>
