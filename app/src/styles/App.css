@@ -36,6 +36,7 @@
     color: white;
 }
 
+
 @media (max-width: 744px) {
     .background_image{
         background-image: url("../img/background/background_tablet.jpg");

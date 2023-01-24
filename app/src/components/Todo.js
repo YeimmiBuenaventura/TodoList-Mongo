@@ -37,7 +37,13 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
     };
 
     return (
-        <div className="row">
+        <div className="row"
+        style={{
+        display:"flex",
+       justifyContent:"space-between",
+       backgroundColor:"#8ECD1E",
+       margin:"20px auto",
+        }}>
             {
                 isEditing ?
                     <div className="column seven wide">
