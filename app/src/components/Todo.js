@@ -71,15 +71,15 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {//
                     </div>
 
                     <div className="column five wide" onDoubleClick={handleDivDoubleClick} > {/* Funcion del doble click */}
-                        <h2 className={"ui header" + (completedState ? " blue" : "")}  style ={{
-                            textDecoration:( completedState ?"line-through" : "")}}  >{value}</h2>{/*el estado está completo se mostrará verde, si no un string vacio*/}
+                        <h2 className={"ui header" + (completedState ? " red" : "")} style ={{
+                            textDecoration:( completedState ?"line-through" : "")}} >{value}</h2>{/*el estado está completo se mostrará verde, si no un string vacio*/}
                     </div>
 
                     <div className="column one wide">
                         <button
                       
                             onClick={removeTodoItemProp}//funcion que falta
-                            className="ui button circular icon red" 
+                            className="ui button circular icon while" 
                         >
                             <i className="white remove icon"></i>
                         </button>
