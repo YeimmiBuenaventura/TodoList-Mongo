@@ -27,7 +27,7 @@ app.use("/todos", todoRoutes); // In this route, the added lists will be display
 mongoose; // I call database connection
 
 // This method helps us to check if it is running correctly on the declared port and this can be tested in postman
-app.get('/', (req, res) => {
+app.get('/todos', (req, res) => {
     res.send('Online') // 
 })
 
