@@ -20,7 +20,7 @@ const App = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const { data } = await todos.get("/todos");
+            const { data } = await todos.get("/");
             setTodoList(data);
         }
 
@@ -28,23 +28,23 @@ const App = () => {
     }, []);
 
     const addTodo = async (item) => {
-        const { data } = await todos.post("/todos", item);
+        const { data } = await todos.post("/", item);
         setTodoList((oldList) => [...oldList, data]);
     };
 
     const removeTodo = async (id) => {
-        await todos.delete(`/todos/${id}`);
+        await todos.delete(`/${id}`);
         setTodoList((oldList) => oldList.filter((item) => item._id !== id));
     };
 
     const editTodo = async (id, item) => {
-        await todos.put(`/todos/${id}`, item);
+        await todos.put(`/${id}`, item);
     };
 
     const searchTitle = e => setTitleSearch(e.target.value);
 
     const clickSearch = async () => {
-        const { data } = await todos.get(`/todos?title=${titleSearch}`);
+        const { data } = await todos.get(`/?title=${titleSearch}`);
         setTodoList(data);
     }
 
