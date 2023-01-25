@@ -11,7 +11,7 @@ const options = {
   useFindAndModify: false
 }
 
-mongoose.connect('mongodb+srv://todo:1234@todo.alqk27v.mongodb.net/?retryWrites=true&w=majority', options)
+mongoose.connect(process.env.URI_MONGO, options)
   .then( () => console.log("Connected successfully")) // If the connection is successful, print the message on the console.
   .catch((err) => console.error(err)); // Bind the error trace to the console and display it
 

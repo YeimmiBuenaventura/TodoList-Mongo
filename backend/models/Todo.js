@@ -1,4 +1,4 @@
-const mongoose = require('./connection'); // We import the path of the connection file to the mongoDB.
+const mongoose = require('../connection'); // We import the path of the connection file to the mongoDB.
 
 // The Schema method creates a structure which will be used in the database. 
 const TodoSchema = new mongoose.Schema({
