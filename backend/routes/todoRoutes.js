@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Todo = require("../models/Todo");
 
-router.get("/new", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         if (req.query?.title) {//Coloque el metodo find para que buscara el objeto titulo
             const seachTodo = await Todo.find({ 
