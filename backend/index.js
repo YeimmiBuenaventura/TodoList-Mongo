@@ -23,7 +23,7 @@ const todoRoutes = require("./routes/todoRoutes"); // The methods that will be u
 
 app.use(express.json());// Use the librery and converts it to json.
 app.use(cors());// Use the security mechanism for the app.
-app.use("/", todoRoutes); // In this route, the added lists will be displayed from the front, it is possible to observe in postamn or in the browser after localhost:3030/todos
+app.use("/todos", todoRoutes); // In this route, the added lists will be displayed from the front, it is possible to observe in postamn or in the browser after localhost:3030/todos
 mongoose; // I call database connection
 
 // This method helps us to check if it is running correctly on the declared port and this can be tested in postman

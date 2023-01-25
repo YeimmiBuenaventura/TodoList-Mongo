@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.post("/", async (req, res) => {
+router.post("/new", async (req, res) => {
     try {
         const result = await Todo.create(req.body)
         res.json(result);
@@ -38,7 +38,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/new", (req, res) => {
     Todo.create(req.body, (err, result) => {
         if (err) throw new Error(err);
         res.json(result);
